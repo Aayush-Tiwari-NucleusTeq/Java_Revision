@@ -2,7 +2,7 @@ package prac;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
 	
 	public Student(int rollno, String name) {
 		super();
@@ -33,6 +33,11 @@ public class Student {
 			return false;
 		Student other = (Student) obj;
 		return rollno == other.rollno;
+	}
+
+	@Override
+	public int compareTo(Student that) {
+		return this.rollno - that.rollno;
 	}
 	
 	
