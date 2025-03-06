@@ -54,6 +54,9 @@ public class CollectionsExample {
 		while(it.hasNext()) {
 			System.out.print(it.next() + " ");
 		}
+		System.out.println("\n");
+		
+		arrList.forEach((i) -> {System.out.println(i + " NucleusTeq");});
 	}
 
 }

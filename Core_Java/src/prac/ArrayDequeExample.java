@@ -6,6 +6,7 @@ public class ArrayDequeExample {
 
 	public static void main(String[] args) {
 		
+		// Can be used as stack with peekLast and pollLast property
 		ArrayDeque<Integer> addqueue = new ArrayDeque<>();
 		addqueue.offer(15);
 		addqueue.offerFirst(50);
