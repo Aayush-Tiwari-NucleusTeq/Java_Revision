@@ -1,4 +1,4 @@
-package design.prac;
+package design.prac.SingletonPattern;
 
 public class Samosa {
 	
