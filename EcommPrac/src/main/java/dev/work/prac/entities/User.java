@@ -1,10 +1,16 @@
 package dev.work.prac.entities;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,4 +47,7 @@ public class User {
 	
 	@Column(length = 10)
 	private String contact;
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private List<Product> products;
 }

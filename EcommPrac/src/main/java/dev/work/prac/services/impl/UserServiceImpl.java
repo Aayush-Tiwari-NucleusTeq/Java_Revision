@@ -1,6 +1,7 @@
 package dev.work.prac.services.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,13 +32,25 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User updateUser(User user) {
-		return null;
+	public User updateUser(int userId ,String address, String contact) {
+		User user = this.userRepository.findById(userId).orElseThrow();
+		user.setAddress(address);
+		user.setContact(contact);
+		System.out.println(user);
+		return this.userRepository.save(user);
 	}
 
 	@Override
 	public String deleteUser(int userId) {
-		return null;
+		Optional<User> user = this.userRepository.findById(userId);
+		System.out.println(user);
+		if(!user.isEmpty()) {
+			this.userRepository.deleteById(userId);
+			return "User with " + userId + " id is deleted successfully";
+		}
+		else {
+			return "User with " + userId + " id is not present in db";
+		}
 	}
 
 }
