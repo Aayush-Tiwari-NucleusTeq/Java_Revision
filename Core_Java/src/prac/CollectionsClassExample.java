@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class CollectionsClassExample {
 
@@ -44,8 +45,16 @@ public class CollectionsClassExample {
 			System.out.println(student.toString());
 		}
 		
+		System.out.println("\nIterating via ListIterator");
+		ListIterator<Student> listIterator = list.listIterator();
+		while (listIterator.hasNext()) {
+			Student student = (Student) listIterator.next();
+			System.out.println(student.toString());
+		}
+		System.out.println(iterator);
 		
 
+		System.out.println();
 		System.out.println(list);
 		System.out.println("\n Sorting");
 		Collections.sort(list);
