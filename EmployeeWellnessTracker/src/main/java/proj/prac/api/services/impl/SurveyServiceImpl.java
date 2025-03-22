@@ -1,5 +1,6 @@
 package proj.prac.api.services.impl;
 
-public class SurveyServiceImpl {
 
+public class SurveyServiceImpl {
+	
 }

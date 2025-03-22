@@ -44,6 +44,9 @@ public class Surveys {
 	@Temporal(TemporalType.DATE)
 	private Date createdAt;
 	
+	@Column(length = 50)
+	private String createdBy;
+	
 	@OneToMany(mappedBy = "survey",cascade = CascadeType.ALL)
 	private List<Questions> questions;
 	
