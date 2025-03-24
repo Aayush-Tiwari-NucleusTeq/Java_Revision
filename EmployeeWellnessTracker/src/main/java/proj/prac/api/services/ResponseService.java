@@ -9,5 +9,5 @@ public interface ResponseService {
 	Responses addResponse(Responses response);
 	List<Responses> getAllResponses();
 	List<Responses> getAllResponsesByUserId(int userId);
-	List<Responses> getAllResponsesByUserIdAndSurveyId(int userId);
+	List<Responses> getAllResponsesByUserIdAndSurveyId(int userId, int surveyId);
 }

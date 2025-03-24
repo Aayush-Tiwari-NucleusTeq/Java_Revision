@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import proj.prac.api.entities.Users;
 import proj.prac.api.exception.InvalidCredentialException;
+import proj.prac.api.exception.ResourceNotFoundException;
 import proj.prac.api.repository.UserRepository;
 import proj.prac.api.services.UserService;
 
@@ -34,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Users getSingleUser(int userId) {
-		Users user = this.userRepository.findById(userId).orElseThrow();
+		Users user = this.userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with id " + userId + " is not present in the database"));
 		if(user != null) {
 			return user;
 		}

@@ -12,4 +12,9 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> invalidCredentialsException(final InvalidCredentialException obj){
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(obj.getMessage());
 	}
+	
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<?> resourceNotFountException(final ResourceNotFoundException obj){
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(obj.getMessage());
+	}
 }

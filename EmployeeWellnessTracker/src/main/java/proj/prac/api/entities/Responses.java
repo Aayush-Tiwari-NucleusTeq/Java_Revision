@@ -1,5 +1,7 @@
 package proj.prac.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,6 +38,7 @@ public class Responses {
 	@Column(nullable = false)
 	private int questionId;
 	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "userId")
 	private Users user;

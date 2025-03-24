@@ -1,5 +1,7 @@
 package proj.prac.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,6 +39,7 @@ public class Questions {
 	@Min(value = 0)
 	private int queRating;
 	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "surveyId")
 	private Surveys survey;
