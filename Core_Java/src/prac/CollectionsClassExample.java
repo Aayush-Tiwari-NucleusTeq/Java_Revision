@@ -27,6 +27,13 @@ public class CollectionsClassExample {
 //		Collections.sort(list, Comparator.reverseOrder());
 //		System.out.println(list);
 		
+		int a = 20;
+		int b = 20;
+//		String a = "Aayush";
+//		String b = "Aayush";
+		
+		System.out.println(a == b);
+		
 		List<Student> list = new ArrayList<>();
 		list.add(new Student(5, "Aayush"));
 		list.add(new Student(4, "Nachi"));
@@ -57,8 +64,8 @@ public class CollectionsClassExample {
 		System.out.println();
 		System.out.println(list);
 		System.out.println("\n Sorting");
-		Collections.sort(list);
 		// Comparable sort
+		Collections.sort(list);
 		System.out.println(list);
 		// Comparator sort
 		Collections.sort(list, (obj1, obj2) -> obj1.name.compareTo(obj2.name));
